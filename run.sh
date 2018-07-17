@@ -11,8 +11,9 @@
 #install ffmpeg to container
 #add-apt-repository -y ppa:jonathonf/ffmpeg-3 2>&1
 #apt-install || exit 1
+
 pip install scikit-image
-pip install -U tensorflow
+pip install tensorflow-gpu
 pip install keras
 pip install matplotlib
 pip install numpy 
