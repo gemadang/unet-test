@@ -14,7 +14,7 @@ from keras.layers import Conv2D, Conv2DTranspose, LeakyReLU, Input, Cropping2D
 from keras.layers import BatchNormalization, Concatenate, Activation, Dropout, Reshape
 from keras.initializers import RandomNormal
 
-import cv2
+#import cv2
 import numpy as np
 import itertools
 import os
@@ -25,7 +25,7 @@ EPOCHS=1000
 BATCH_SIZE=35
 SAVE_INTERVAL=50
 
-
+'''
 def normalized(rgb):
     #return rgb/255.0
     norm=np.zeros((rgb.shape[0], rgb.shape[1], 3),np.float32)
@@ -39,7 +39,7 @@ def normalized(rgb):
     norm[:,:,2]=cv2.equalizeHist(r)
 
     return norm
-
+'''
 def one_hot_it(labels, shape=(360,480,12)):
     x = np.zeros(shape)
     for i in range(x.shape[0]):
