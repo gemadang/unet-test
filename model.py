@@ -265,5 +265,5 @@ if __name__ == '__main__':
     segnet.save('final')
 
     time_elapsed = (time.time() - time_start)
-    with open("./output/time_metrics.txt", "w") as text_file:
+    with open("/artifacts/time_metrics.txt", "w") as text_file:
         text_file.write("Time Runnning: {} Epochs: {}".format(time_elapsed, EPOCHS))
