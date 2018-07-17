@@ -12,9 +12,5 @@ apt-install() {
 add-apt-repository -y ppa:jonathonf/ffmpeg-3 2>&1
 apt-install || exit 1
 
-#create folders
-mkdir data
-mkdir data/bin
-
 #run style transfer on video
 python model.py
