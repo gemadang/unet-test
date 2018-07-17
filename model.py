@@ -228,7 +228,7 @@ class SegNet():
             filled_in = self.visualize(np.argmax(segment[i, :, :, :], axis=2))
             axs[2, i].imshow(filled_in)
             axs[2, i].axis('off')
-        fig.savefig("./output/img_results/training_%d.png" % (epoch))
+        fig.savefig("/artifacts/output/img_results/training_%d.png" % (epoch))
         plt.close()
 
     def visualize(self, temp):
@@ -248,8 +248,8 @@ class SegNet():
         return rgb
 
     def save(self, model_name):
-        model_path = "./output/saved_model/%s.json" % (model_name)
-        weights_path = "./output/saved_model/%s_weights.hdf5" % (model_name)
+        model_path = "/artifacts/output/saved_model/%s.json" % (model_name)
+        weights_path = "/artifacts/output/saved_model/%s_weights.hdf5" % (model_name)
         options = {"file_arch": model_path,
                     "file_weight": weights_path}
         json_string = self.model.to_json()
