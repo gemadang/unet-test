@@ -21,6 +21,6 @@ pip install numpy
 pip install awscli --upgrade --ignore-installed six
 
 aws s3 sync s3://japan-roof-top-bucket /storage --no-sign-request
-ls -Rla /storage
+ls -la /storage
 
 python model.py
