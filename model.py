@@ -173,7 +173,7 @@ class SegNet():
         self.save("SegNet_final")
 
     def load_data(self, batch_size=128):
-        train_path = glob('./%s/Train_data/*' % (self.dataset_name))
+        train_path = glob('%s/Train_data/*' % (self.dataset_name))
         #train_path = glob('./data/train/*')
 
         batch_images = np.random.choice(train_path, size=batch_size)
@@ -184,7 +184,7 @@ class SegNet():
             img_name = img_path.split('/')[-1]
 
             img = io.imread(img_path)
-            label = one_hot_it(io.imread('./%s/Train_label/%s' % (self.dataset_name, img_name)), shape=self.label_shape)
+            label = one_hot_it(io.imread('%s/Train_label/%s' % (self.dataset_name, img_name)), shape=self.label_shape)
             #label = one_hot_it(io.imread('./data/train_labels/%s' % (img_name)), shape=self.label_shape)
 
             if np.random.random() < 0.5:

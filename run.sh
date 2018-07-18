@@ -21,7 +21,7 @@ pip install numpy
 pip install awscli --upgrade --ignore-installed six
 
 aws s3 sync s3://japan-roof-top-bucket /storage --no-sign-request
-ls -la /storage/Train_label
-ls -la /storage/Train_data
+#ls -la /storage/Train_label
+#ls -la /storage/Train_data
 
-python model2.py
+python model.py
