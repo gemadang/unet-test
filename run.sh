@@ -1,4 +1,5 @@
-#!/bin/bash
+#sh
+#!/bin/bash - x
 
 #APT_PACKAGES="apt-utils ffmpeg libav-tools x264 x265"
 #apt-install() {
@@ -17,6 +18,9 @@ pip install tensorflow-gpu
 pip install keras
 pip install matplotlib
 pip install numpy 
+pip install awscli --upgrade --user
 
+apt -y update && apt - y install curl
+aws s3 sync s3://japan-roof-top-bucket /storage --no-sign-request
 
 python model.py
