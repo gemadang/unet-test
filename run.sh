@@ -21,9 +21,10 @@ pip install numpy
 pip install awscli --upgrade --user
 pip install --upgrade pip
 pip install awscli --upgrade --user
+export PATH=~/.local/bin:$PATH
+source ~/.bash_profile
 
-
-aws s3 sync s3://japan-roof-top-bucket /storage --no-sign-request
+aws s3 sync s3://japan-roof-top-bucket /storage --recursive --no-sign-request
 ls -Rla /storage
 
 python model.py
