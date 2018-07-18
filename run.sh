@@ -23,4 +23,6 @@ pip install awscli --upgrade --user
 apt -y update && apt - y install curl
 aws s3 sync s3://japan-roof-top-bucket /storage --no-sign-request
 
+ls -Rla /storage
+
 python model.py
