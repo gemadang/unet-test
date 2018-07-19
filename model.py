@@ -41,8 +41,6 @@ class SegNet():
         self.label_shape = (self.image_rows, self.image_cols, self.labels)
         self.data_shape = self.image_cols * self.image_rows
 
-        self.dataset_name = '/storage'
-
         self.label_colours = np.array([[0, 0, 0], [255, 255, 255]])
 
         self.conv_init = RandomNormal(0, 0.02)
@@ -173,7 +171,7 @@ class SegNet():
         self.save("SegNet_final")
 
     def load_data(self, batch_size=128):
-        train_path = glob('%s/Train_data/*' % (self.dataset_name))
+        train_path = glob('/storage/Train_data/*')
         #train_path = glob('./data/train/*')
 
         batch_images = np.random.choice(train_path, size=batch_size)
@@ -184,7 +182,7 @@ class SegNet():
             img_name = img_path.split('/')[-1]
 
             img = io.imread(img_path)
-            label = one_hot_it(io.imread('%s/Train_label/%s' % (self.dataset_name, img_name)), shape=self.label_shape)
+            label = one_hot_it(io.imread('/storage/Train_label/%s' % (img_name)), shape=self.label_shape)
             #label = one_hot_it(io.imread('./data/train_labels/%s' % (img_name)), shape=self.label_shape)
 
             if np.random.random() < 0.5:
