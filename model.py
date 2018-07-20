@@ -19,6 +19,7 @@ import itertools
 import os
 
 import time
+import psutil 
 
 EPOCHS=1000
 BATCH_SIZE=35
@@ -248,11 +249,11 @@ class SegNet():
 
 if __name__ == '__main__':
     time_start = time.time()
-
+    process = psutil.Process(os.getppid())
     segnet = SegNet()
     segnet.train(epochs=EPOCHS, batch_size=BATCH_SIZE, save_interval=SAVE_INTERVAL)
     segnet.save('final')
 
     time_elapsed = (time.time() - time_start)
     with open("/artifacts/time_metrics.txt", "w") as text_file:
-        text_file.write("Time Runnning: {} Epochs: {}".format(time_elapsed, EPOCHS))
+        text_file.write("Time Runnning: {} Epochs: {} Process Percent: {} Process Info: {}".format(time_elapsed, EPOCHS, process.memory_percent, process.memory_info()))
